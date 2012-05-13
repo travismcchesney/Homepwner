@@ -21,6 +21,7 @@
             [[BNRItemStore sharedStore] createItem];
         }
     }
+
     return self;
 }
 
@@ -29,10 +30,24 @@
     return [self init];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [[[BNRItemStore sharedStore] allItems] count];
+    NSPredicate *predicate;
+    
+    if (section == 0) {
+        predicate = [NSPredicate
+                       predicateWithFormat:@"(valueInDollars > 50)"];
+    } else {
+        predicate = [NSPredicate
+                     predicateWithFormat:@"(valueInDollars <= 50)"];
+    }
+    return [[[[BNRItemStore sharedStore] allItems] filteredArrayUsingPredicate:predicate] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -49,15 +64,26 @@
                     reuseIdentifier:@"UITableViewCell"];
     }
     
-    // Set the text on the cell with the descriptino of the item
+    NSPredicate *predicate;
+    
+    // Set the text on the cell with the description of the item
     // that is at the nth index of items, where n = row this cell
     // will appear in on the tableview
-    BNRItem *p = [[[BNRItemStore sharedStore] allItems]
-                  objectAtIndex:[indexPath row]];
+    if ([indexPath section] == 0) {
+        predicate = [NSPredicate
+                     predicateWithFormat:@"(valueInDollars > 50)"];
+    } else {
+        predicate = [NSPredicate
+                     predicateWithFormat:@"(valueInDollars <= 50)"];
+    }
+    
+    NSArray *toReturn = [[[BNRItemStore sharedStore] allItems] filteredArrayUsingPredicate:predicate];
+    
+    BNRItem *p = [toReturn objectAtIndex:[indexPath row]];
     
     [[cell textLabel] setText:[p description]];
      
-     return cell;
+    return cell;
 }
 
 @end
