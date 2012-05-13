@@ -9,59 +9,57 @@
 #import "BNRItem.h"
 
 @implementation BNRItem
+@synthesize container;
+@synthesize containedItem;
+@synthesize itemName, serialNumber, dateCreated, valueInDollars;
 
-// Class Methods
-+(id)randomItem
++ (id)randomItem
 {
     // Create an array of three adjectives
     NSArray *randomAdjectiveList = [NSArray arrayWithObjects:@"Fluffy",
-                                                             @"Rusty",
-                                                             @"Shiny", nil];
-    
+                                    @"Rusty",
+                                    @"Shiny", nil];
     // Create an array of three nouns
-    NSArray *randomNounList = [NSArray arrayWithObjects:@"Bear", 
-                                                        @"Spork", 
-                                                        @"Mac", nil];
-    
+    NSArray *randomNounList = [NSArray arrayWithObjects:@"Bear",
+                               @"Spork",
+                               @"Mac", nil];
+    // Get the index of a random adjective/noun from the lists
+    // Note: The % operator, called the modulo operator, gives
+    // you the remainder. So adjectiveIndex is a random number
+    // from 0 to 2 inclusive.
     NSInteger adjectiveIndex = rand() % [randomAdjectiveList count];
     NSInteger nounIndex = rand() % [randomNounList count];
+    
+    // Note that NSInteger is not an object, but a type definition
+    // for "unsigned long"
     
     NSString *randomName = [NSString stringWithFormat:@"%@ %@",
                             [randomAdjectiveList objectAtIndex:adjectiveIndex],
                             [randomNounList objectAtIndex:nounIndex]];
-    
     int randomValue = rand() % 100;
-    
     NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
                                     '0' + rand() % 10,
                                     'A' + rand() % 26,
                                     '0' + rand() % 10,
                                     'A' + rand() % 26,
                                     '0' + rand() % 10];
-    
+    // Once again, ignore the memory problems with this method
     BNRItem *newItem =
-        [[self alloc] initWithItemName:randomName valueInDollars: randomValue serialNumber:randomSerialNumber];
-    
+    [[self alloc] initWithItemName:randomName
+                    valueInDollars:randomValue
+                      serialNumber:randomSerialNumber];
     return newItem;
 }
 
-// Constructors
--(id)init
+- (id)initWithItemName:(NSString *)name
+        valueInDollars:(int)value
+          serialNumber:(NSString *)sNumber
 {
-    return [self initWithItemName:@"Item"
-                   valueInDollars:0
-                     serialNumber:@""];
-}
-
--(id)initWithItemName:(NSString *)name
-       valueInDollars:(int)value 
-         serialNumber:(NSString *)sNumber
-{
-    // Call the superclass' designated initializer
+    // Call the superclass's designated initializer
     self = [super init];
     
-    // Did the superclass' designated initializer succeed?
-    if (self){
+    // Did the superclass's designated initializer succeed?
+    if(self) {
         // Give the instance variables initial values
         [self setItemName:name];
         [self setSerialNumber:sNumber];
@@ -73,20 +71,13 @@
     return self;
 }
 
--(NSString *)description
+- (id)init 
 {
-    NSString *descriptionString = 
-    [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
-                        itemName,
-                        serialNumber,
-                        valueInDollars,
-                        dateCreated];
-    
-    return descriptionString;
+    return [self initWithItemName:@"Possession"
+                   valueInDollars:0
+                     serialNumber:@""];
 }
 
-@synthesize itemName;
-@synthesize containedItem, container, serialNumber, valueInDollars, dateCreated;
 
 - (void)setContainedItem:(BNRItem *)i
 {
@@ -94,9 +85,19 @@
     [i setContainer:self];
 }
 
+- (NSString *)description
+{
+    NSString *descriptionString =
+    [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
+     itemName,
+     serialNumber,
+     valueInDollars,
+     dateCreated];
+    return descriptionString;
+}
 - (void)dealloc
 {
-    NSLog(@"Destroyed: %@", self);
+    NSLog(@"Destroyed: %@ ", self);
 }
 
 @end

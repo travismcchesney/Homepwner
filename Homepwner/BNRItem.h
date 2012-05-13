@@ -10,12 +10,11 @@
 
 @interface BNRItem : NSObject
 {
-    
 }
 
-+(id)randomItem;
++ (id)randomItem;
 
--(id)initWithItemName:(NSString *)name
+- (id)initWithItemName:(NSString *)name
         valueInDollars:(int)value
           serialNumber:(NSString *)sNumber;
 
