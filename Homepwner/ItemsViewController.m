@@ -29,6 +29,13 @@
     return [self init];
 }
 
+- (void)viewDidLoad
+{
+    UIImage *backgroundImage = [UIImage imageNamed:@"background-image"];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:backgroundImage];
+    [[self tableView] setBackgroundView:backgroundView];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
