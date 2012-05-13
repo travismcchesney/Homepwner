@@ -35,6 +35,17 @@
     return [[[BNRItemStore sharedStore] allItems] count] + 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView 
+    heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{   
+    if ([indexPath section] == [tableView numberOfSections]-1 && 
+        [indexPath row] == [self tableView:tableView numberOfRowsInSection:[indexPath section]]-1) {
+        return 44;
+    } else {
+        return 60;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -49,8 +60,8 @@
                     reuseIdentifier:@"UITableViewCell"];
     }
     
-    if ([indexPath section] == [(UITableView *)[self view] numberOfSections]-1 && 
-        [indexPath row] == [(UITableView *)[self view] numberOfRowsInSection:[indexPath section]]-1) {
+    if ([indexPath section] == [tableView numberOfSections]-1 && 
+        [indexPath row] == [tableView numberOfRowsInSection:[indexPath section]]-1) {
         [[cell textLabel] setText:@"No more items!"];
     } else {
         // Set the text on the cell with the description of the item
@@ -60,9 +71,11 @@
                       objectAtIndex:[indexPath row]];
         
         [[cell textLabel] setText:[p description]];
+        UIFont *newFont = [[[cell textLabel] font] fontWithSize:20];
+        [[cell textLabel] setFont:newFont];
     }
-     
-     return cell;
+    
+    return cell;
 }
 
 @end
