@@ -59,8 +59,8 @@
                     reuseIdentifier:@"UITableViewCell"];
     }
     
-    if ([indexPath section] == [(UITableView *)[self view] numberOfSections]-1 && 
-        [indexPath row] == [(UITableView *)[self view] numberOfRowsInSection:[indexPath section]]-1) {
+    if ([indexPath section] == [tableView numberOfSections]-1 && 
+        [indexPath row] == [tableView numberOfRowsInSection:[indexPath section]]-1) {
         [[cell textLabel] setText:@"No more items!"];
     } else {
         // Set the text on the cell with the description of the item
@@ -136,10 +136,26 @@
     }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath row] == [tableView numberOfRowsInSection:[indexPath section]]-1) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 - (void)tableView:(UITableView *)tableView 
     moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath 
            toIndexPath:(NSIndexPath *)destinationIndexPath
 {
+    if ([destinationIndexPath row] == [tableView numberOfRowsInSection:[destinationIndexPath section]]-1) {
+        BNRItemStore *store = [BNRItemStore sharedStore];
+        [store moveItemAtIndex:[sourceIndexPath row] toIndex:[destinationIndexPath row]-1];
+        [tableView reloadData];
+        return;
+    }
+    
     [[BNRItemStore sharedStore] moveItemAtIndex:[sourceIndexPath row] toIndex:[destinationIndexPath row]];
 }
 
