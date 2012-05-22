@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F93DE7F156B3CAD00BE688B /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7C156B3CAD00BE688B /* BNRItem.m */; };
+		1F93DE80156B3CAD00BE688B /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */; };
+		1F93DE85156B3CCD00BE688B /* HomepwnerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */; };
+		1F93DE86156B3CCD00BE688B /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE84156B3CCD00BE688B /* ItemsViewController.m */; };
 		1FC8EF64155E05FA00D9DB60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC8EF63155E05FA00D9DB60 /* UIKit.framework */; };
 		1FC8EF66155E05FA00D9DB60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC8EF65155E05FA00D9DB60 /* Foundation.framework */; };
 		1FC8EF68155E05FA00D9DB60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC8EF67155E05FA00D9DB60 /* CoreGraphics.framework */; };
@@ -16,15 +20,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F93DE7B156B3CAD00BE688B /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		1F93DE7C156B3CAD00BE688B /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
+		1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		1F93DE81156B3CCD00BE688B /* HomepwnerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepwnerAppDelegate.h; sourceTree = "<group>"; };
+		1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepwnerAppDelegate.m; sourceTree = "<group>"; };
+		1F93DE83156B3CCD00BE688B /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
+		1F93DE84156B3CCD00BE688B /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 		1FC8EF5F155E05FA00D9DB60 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC8EF63155E05FA00D9DB60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FC8EF65155E05FA00D9DB60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1FC8EF67155E05FA00D9DB60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1FC8EF6B155E05FA00D9DB60 /* Homepwner-Info.plist */ = {isa = PBXFileReference; path = "Homepwner-Info.plist"; sourceTree = "<group>"; };
+		1FC8EF6B155E05FA00D9DB60 /* Homepwner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Homepwner-Info.plist"; sourceTree = "<group>"; };
 		1FC8EF6D155E05FA00D9DB60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FC8EF6F155E05FA00D9DB60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1FC8EF71155E05FA00D9DB60 /* Homepwner-Prefix.pch */ = {isa = PBXFileReference; path = "Homepwner-Prefix.pch"; sourceTree = "<group>"; };
-		1FC8EF72155E05FA00D9DB60 /* HomepwnerAppDelegate.h */ = {isa = PBXFileReference; path = HomepwnerAppDelegate.h; sourceTree = "<group>"; };
+		1FC8EF71155E05FA00D9DB60 /* Homepwner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Homepwner-Prefix.pch"; sourceTree = "<group>"; };
+		1FC8EF72155E05FA00D9DB60 /* HomepwnerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomepwnerAppDelegate.h; sourceTree = "<group>"; };
 		1FC8EF73155E05FA00D9DB60 /* HomepwnerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +84,14 @@
 		1FC8EF69155E05FA00D9DB60 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				1F93DE81156B3CCD00BE688B /* HomepwnerAppDelegate.h */,
+				1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */,
+				1F93DE83156B3CCD00BE688B /* ItemsViewController.h */,
+				1F93DE84156B3CCD00BE688B /* ItemsViewController.m */,
+				1F93DE7B156B3CAD00BE688B /* BNRItem.h */,
+				1F93DE7C156B3CAD00BE688B /* BNRItem.m */,
+				1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */,
+				1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */,
 				1FC8EF72155E05FA00D9DB60 /* HomepwnerAppDelegate.h */,
 				1FC8EF73155E05FA00D9DB60 /* HomepwnerAppDelegate.m */,
 				1FC8EF6A155E05FA00D9DB60 /* Supporting Files */,
@@ -154,6 +174,10 @@
 			files = (
 				1FC8EF70155E05FA00D9DB60 /* main.m in Sources */,
 				1FC8EF74155E05FA00D9DB60 /* HomepwnerAppDelegate.m in Sources */,
+				1F93DE7F156B3CAD00BE688B /* BNRItem.m in Sources */,
+				1F93DE80156B3CAD00BE688B /* BNRItemStore.m in Sources */,
+				1F93DE85156B3CCD00BE688B /* HomepwnerAppDelegate.m in Sources */,
+				1F93DE86156B3CCD00BE688B /* ItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +281,7 @@
 				1FC8EF79155E05FA00D9DB60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
