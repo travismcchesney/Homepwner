@@ -30,7 +30,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [[[BNRItemStore sharedStore] allItems] count];
+    return [[[BNRItemStore sharedStore] allItems] count] + 1;
 }
 
 - (UIView *)tableView:(UITableView *)tv viewForHeaderInSection:(NSInteger)section
@@ -59,13 +59,18 @@
                     reuseIdentifier:@"UITableViewCell"];
     }
     
-    // Set the text on the cell with the descriptino of the item
-    // that is at the nth index of items, where n = row this cell
-    // will appear in on the tableview
-    BNRItem *p = [[[BNRItemStore sharedStore] allItems]
-                  objectAtIndex:[indexPath row]];
-    
-    [[cell textLabel] setText:[p description]];
+    if ([indexPath section] == [(UITableView *)[self view] numberOfSections]-1 && 
+        [indexPath row] == [(UITableView *)[self view] numberOfRowsInSection:[indexPath section]]-1) {
+        [[cell textLabel] setText:@"No more items!"];
+    } else {
+        // Set the text on the cell with the description of the item
+        // that is at the nth index of items, where n = row this cell
+        // will appear in on the tableview
+        BNRItem *p = [[[BNRItemStore sharedStore] allItems]
+                      objectAtIndex:[indexPath row]];
+        
+        [[cell textLabel] setText:[p description]];
+    }
      
      return cell;
 }
