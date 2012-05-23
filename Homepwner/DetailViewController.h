@@ -10,13 +10,16 @@
 
 @class BNRItem;
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITextFieldDelegate>
 {
     __weak IBOutlet UITextField *nameField;
     __weak IBOutlet UITextField *serialNumberField;
     __weak IBOutlet UITextField *valueField;
     __weak IBOutlet UILabel *dateLabel;
-    
+    __weak IBOutlet UIButton *doneButton;
 }
+
+- (IBAction)closeNumberpad:(id)sender;
+
 @property (nonatomic, strong) BNRItem *item;
 @end

@@ -67,4 +67,24 @@
     [item setValueInDollars:[[valueField text] intValue]];
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == valueField) {
+        [doneButton setEnabled:YES];
+    }
+}
+         
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == valueField) {
+        [doneButton setEnabled:NO];
+    }
+}
+
+- (void)closeNumberpad:(id)sender
+{
+    // Clear first responder
+    [[self view] endEditing:YES];
+}
+
 @end
