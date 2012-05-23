@@ -17,7 +17,21 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-
+        UINavigationItem *n = [self navigationItem];
+        
+        [n setTitle:@"Homepwner"];
+        
+        // Create a new bar button item that will send
+        // addNewItem: to ItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
+                        initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+                                             target:self 
+                                             action:@selector(addNewItem:)];
+        
+        // Set this bar button item as the right item in the navigationItem
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     }
     return self;
 }
@@ -31,18 +45,6 @@
  numberOfRowsInSection:(NSInteger)section
 {
     return [[[BNRItemStore sharedStore] allItems] count];
-}
-
-- (UIView *)tableView:(UITableView *)tv viewForHeaderInSection:(NSInteger)section
-{
-    return [self headerView];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    // The height of the header view should be determined from the height of the
-    // view in the XIB file
-    return [[self headerView] bounds].size.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -68,34 +70,6 @@
     [[cell textLabel] setText:[p description]];
      
      return cell;
-}
-
-- (UIView *)headerView
-{
-    // If we haven't loaded the headerView yet...
-    if (!headerView) {
-        NSBundle *bundle = [NSBundle mainBundle];
-        // Load HeaderView.xib
-        [bundle loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    
-    return headerView;
-}
-
-- (IBAction)toggleEditingMode:(id)sender
-{
-    // If we are currently in editing mode...
-    if ([self isEditing]) {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-    } else {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        // Enter editing mode
-        [self setEditing:YES animated:YES];
-    }
 }
 
 - (IBAction)addNewItem:(id)sender
@@ -136,6 +110,28 @@
            toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [[BNRItemStore sharedStore] moveItemAtIndex:[sourceIndexPath row] toIndex:[destinationIndexPath row]];
+}
+
+- (void)tableView:(UITableView *)tableView 
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = [items objectAtIndex:[indexPath row]];
+    
+    // Give detail view controller a pointer to the item object in row
+    [detailViewController setItem:selectedItem];
+    
+    // Push it onto the top of the navigation controller's stack
+    [[self navigationController] pushViewController:detailViewController 
+                                           animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
 }
 
 @end
