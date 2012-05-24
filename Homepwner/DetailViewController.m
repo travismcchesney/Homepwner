@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "BNRItem.h"
+#import "CreateDateViewController.h"
 
 @interface DetailViewController ()
 
@@ -85,6 +86,19 @@
 {
     // Clear first responder
     [[self view] endEditing:YES];
+}
+
+- (void)changeDate:(id)sender
+{
+    // Display the date picker to change the create date
+    CreateDateViewController *createDateViewController = [[CreateDateViewController alloc] init];
+    
+    // Give create date view controller a pointer to the BNR Item
+    [createDateViewController setItem:item];
+    
+    // Push it onto the top of the navigation controller's stack
+    [[self navigationController] pushViewController:createDateViewController 
+                                           animated:YES];
 }
 
 @end

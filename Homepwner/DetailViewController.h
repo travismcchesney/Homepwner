@@ -20,6 +20,7 @@
 }
 
 - (IBAction)closeNumberpad:(id)sender;
+- (IBAction)changeDate:(id)sender;
 
 @property (nonatomic, strong) BNRItem *item;
 @end

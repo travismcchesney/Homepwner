@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F65F533156B42E500C05C80 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F531156B42E500C05C80 /* DetailViewController.m */; };
+		1F65F534156B42E500C05C80 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F65F532156B42E500C05C80 /* DetailViewController.xib */; };
+		1F65F538156DD67800C05C80 /* CreateDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F536156DD67700C05C80 /* CreateDateViewController.m */; };
+		1F65F539156DD67800C05C80 /* CreateDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F65F537156DD67800C05C80 /* CreateDateViewController.xib */; };
 		1F93DE7F156B3CAD00BE688B /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7C156B3CAD00BE688B /* BNRItem.m */; };
 		1F93DE80156B3CAD00BE688B /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */; };
 		1F93DE85156B3CCD00BE688B /* HomepwnerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */; };
@@ -16,10 +20,15 @@
 		1FC8EF68155E05FA00D9DB60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC8EF67155E05FA00D9DB60 /* CoreGraphics.framework */; };
 		1FC8EF6E155E05FA00D9DB60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FC8EF6C155E05FA00D9DB60 /* InfoPlist.strings */; };
 		1FC8EF70155E05FA00D9DB60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8EF6F155E05FA00D9DB60 /* main.m */; };
-		1FC8EF74155E05FA00D9DB60 /* HomepwnerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8EF73155E05FA00D9DB60 /* HomepwnerAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F65F530156B42E500C05C80 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1F65F531156B42E500C05C80 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1F65F532156B42E500C05C80 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1F65F535156DD67700C05C80 /* CreateDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDateViewController.h; sourceTree = "<group>"; };
+		1F65F536156DD67700C05C80 /* CreateDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDateViewController.m; sourceTree = "<group>"; };
+		1F65F537156DD67800C05C80 /* CreateDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateDateViewController.xib; sourceTree = "<group>"; };
 		1F93DE7B156B3CAD00BE688B /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		1F93DE7C156B3CAD00BE688B /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -36,8 +45,6 @@
 		1FC8EF6D155E05FA00D9DB60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FC8EF6F155E05FA00D9DB60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FC8EF71155E05FA00D9DB60 /* Homepwner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Homepwner-Prefix.pch"; sourceTree = "<group>"; };
-		1FC8EF72155E05FA00D9DB60 /* HomepwnerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomepwnerAppDelegate.h; sourceTree = "<group>"; };
-		1FC8EF73155E05FA00D9DB60 /* HomepwnerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,16 +91,20 @@
 		1FC8EF69155E05FA00D9DB60 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				1F65F530156B42E500C05C80 /* DetailViewController.h */,
+				1F65F531156B42E500C05C80 /* DetailViewController.m */,
+				1F65F532156B42E500C05C80 /* DetailViewController.xib */,
 				1F93DE81156B3CCD00BE688B /* HomepwnerAppDelegate.h */,
 				1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */,
+				1F65F535156DD67700C05C80 /* CreateDateViewController.h */,
+				1F65F536156DD67700C05C80 /* CreateDateViewController.m */,
+				1F65F537156DD67800C05C80 /* CreateDateViewController.xib */,
 				1F93DE83156B3CCD00BE688B /* ItemsViewController.h */,
 				1F93DE84156B3CCD00BE688B /* ItemsViewController.m */,
 				1F93DE7B156B3CAD00BE688B /* BNRItem.h */,
 				1F93DE7C156B3CAD00BE688B /* BNRItem.m */,
 				1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */,
 				1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */,
-				1FC8EF72155E05FA00D9DB60 /* HomepwnerAppDelegate.h */,
-				1FC8EF73155E05FA00D9DB60 /* HomepwnerAppDelegate.m */,
 				1FC8EF6A155E05FA00D9DB60 /* Supporting Files */,
 			);
 			path = Homepwner;
@@ -162,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FC8EF6E155E05FA00D9DB60 /* InfoPlist.strings in Resources */,
+				1F65F534156B42E500C05C80 /* DetailViewController.xib in Resources */,
+				1F65F539156DD67800C05C80 /* CreateDateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,11 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FC8EF70155E05FA00D9DB60 /* main.m in Sources */,
-				1FC8EF74155E05FA00D9DB60 /* HomepwnerAppDelegate.m in Sources */,
 				1F93DE7F156B3CAD00BE688B /* BNRItem.m in Sources */,
 				1F93DE80156B3CAD00BE688B /* BNRItemStore.m in Sources */,
 				1F93DE85156B3CCD00BE688B /* HomepwnerAppDelegate.m in Sources */,
 				1F93DE86156B3CCD00BE688B /* ItemsViewController.m in Sources */,
+				1F65F533156B42E500C05C80 /* DetailViewController.m in Sources */,
+				1F65F538156DD67800C05C80 /* CreateDateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
