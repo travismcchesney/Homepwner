@@ -98,6 +98,7 @@
     }
     
     [imagePicker setDelegate:self];
+    [imagePicker setAllowsEditing:YES];
     
     // Place image picker on the screen
     [self presentViewController:imagePicker animated:YES completion:nil];
@@ -115,7 +116,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
     
     // Get picked image from info dictionary
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     
     // Create a CFUUID object - it knows how to create unique identifier strings
     CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
