@@ -152,4 +152,11 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [[self view] endEditing:YES];
 }
 
+- (IBAction)clearPhoto:(id)sender
+{
+    [[BNRImageStore sharedStore] deleteImageForKey:[item imageKey]];
+    
+    [imageView setImage:nil];
+}
+
 @end
