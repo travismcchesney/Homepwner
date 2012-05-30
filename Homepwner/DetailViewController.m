@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
+#import "OverlayView.h"
 
 @interface DetailViewController ()
 
@@ -16,7 +17,7 @@
 
 @implementation DetailViewController
 
-@synthesize item;
+@synthesize item, overlay;
 
 - (void)setItem:(BNRItem *)i
 {
@@ -93,6 +94,7 @@
     if ([UIImagePickerController
          isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [imagePicker setCameraOverlayView:[[OverlayView alloc] initWithFrame:imagePicker.view.bounds]];
     } else {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     }

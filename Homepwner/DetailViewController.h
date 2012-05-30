@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OverlayView.h"
 
 @class BNRItem;
 
@@ -21,6 +22,7 @@
     
 }
 @property (nonatomic, strong) BNRItem *item;
+@property (nonatomic, strong) OverlayView *overlay;
 
 - (IBAction)takePicture:(id)sender;
 

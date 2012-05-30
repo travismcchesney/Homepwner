@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F65F540156DDB7700C05C80 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F53E156DDB7700C05C80 /* DetailViewController.m */; };
 		1F65F541156DDB7700C05C80 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F65F53F156DDB7700C05C80 /* DetailViewController.xib */; };
+		1F65F54415714C9500C05C80 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F54315714C9500C05C80 /* BNRImageStore.m */; };
+		1F65F54B1576B04C00C05C80 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F54A1576B04C00C05C80 /* OverlayView.m */; };
 		1F93DE7F156B3CAD00BE688B /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7C156B3CAD00BE688B /* BNRItem.m */; };
 		1F93DE80156B3CAD00BE688B /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */; };
 		1F93DE85156B3CCD00BE688B /* HomepwnerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */; };
@@ -24,6 +26,10 @@
 		1F65F53D156DDB7700C05C80 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		1F65F53E156DDB7700C05C80 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1F65F53F156DDB7700C05C80 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1F65F54215714C9500C05C80 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
+		1F65F54315714C9500C05C80 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
+		1F65F5491576B04C00C05C80 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		1F65F54A1576B04C00C05C80 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 		1F93DE7B156B3CAD00BE688B /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		1F93DE7C156B3CAD00BE688B /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 			children = (
 				1F65F53D156DDB7700C05C80 /* DetailViewController.h */,
 				1F65F53E156DDB7700C05C80 /* DetailViewController.m */,
+				1F65F54215714C9500C05C80 /* BNRImageStore.h */,
+				1F65F54315714C9500C05C80 /* BNRImageStore.m */,
 				1F65F53F156DDB7700C05C80 /* DetailViewController.xib */,
 				1F93DE81156B3CCD00BE688B /* HomepwnerAppDelegate.h */,
 				1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */,
@@ -98,6 +106,8 @@
 				1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */,
 				1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */,
 				1FC8EF6A155E05FA00D9DB60 /* Supporting Files */,
+				1F65F5491576B04C00C05C80 /* OverlayView.h */,
+				1F65F54A1576B04C00C05C80 /* OverlayView.m */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -182,6 +192,8 @@
 				1F93DE85156B3CCD00BE688B /* HomepwnerAppDelegate.m in Sources */,
 				1F93DE86156B3CCD00BE688B /* ItemsViewController.m in Sources */,
 				1F65F540156DDB7700C05C80 /* DetailViewController.m in Sources */,
+				1F65F54415714C9500C05C80 /* BNRImageStore.m in Sources */,
+				1F65F54B1576B04C00C05C80 /* OverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
