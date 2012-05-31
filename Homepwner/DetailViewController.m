@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
+#import "BNRItemStore.h"
 
 @interface DetailViewController ()
 
@@ -16,7 +17,38 @@
 
 @implementation DetailViewController
 
+@synthesize dismissBlock;
 @synthesize item;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    @throw [NSException exceptionWithName:@"Wrong initializer"
+                                   reason:@"Use initForNewItem"
+                                 userInfo:nil];
+}
+
+- (id)initForNewItem:(BOOL)isNew
+{
+    self = [super initWithNibName:@"DetailViewController" bundle:nil];
+    
+    if (self) {
+        if (isNew) {
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] 
+                    initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
+                                         target:self 
+                                         action:@selector(save:)];
+            
+            [[self navigationItem] setRightBarButtonItem:doneItem];
+            
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] 
+                    initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
+                                         target:self 
+                                         action:@selector(cancel:)];
+            [[self navigationItem] setLeftBarButtonItem:cancelItem];
+        }
+    }
+    return self;
+}
 
 - (void)setItem:(BNRItem *)i
 {
@@ -93,6 +125,12 @@
 
 - (IBAction)takePicture:(id)sender 
 {
+    if ([imagePickerPopover isPopoverVisible]) {
+        // If the popover is already up, get rid of it
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+        return;
+    }
     UIImagePickerController *imagePicker =
             [[UIImagePickerController alloc] init];
     
@@ -160,9 +198,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     CFRelease(newUniqueIDString);
     CFRelease(newUniqueID);
     
-    // Take image picker off the screen -
-    // you must call this dismiss method
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        // If on the phone, the image picker is presented modall.  Dismiss it.
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        // If on the pad, the image picker is in the popover.  Dismiss the popover.
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -180,6 +223,21 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSLog(@"User dismissed popover");
     imagePickerPopover = nil;
+}
+
+- (void)save:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES 
+                                                        completion:dismissBlock];
+}
+
+- (void)cancel:(id)sender
+{
+    // If the user canceled, then remove the BNRItem from the store
+    [[BNRItemStore sharedStore] removeItem:item];
+    
+    [[self presentingViewController] dismissViewControllerAnimated:YES 
+                                                        completion:dismissBlock];
 }
 
 @end
