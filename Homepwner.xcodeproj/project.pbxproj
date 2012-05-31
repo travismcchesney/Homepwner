@@ -10,6 +10,9 @@
 		1F65F540156DDB7700C05C80 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F53E156DDB7700C05C80 /* DetailViewController.m */; };
 		1F65F541156DDB7700C05C80 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F65F53F156DDB7700C05C80 /* DetailViewController.xib */; };
 		1F65F5551576C39E00C05C80 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F5541576C39E00C05C80 /* BNRImageStore.m */; };
+		1F65F55D157700B500C05C80 /* PopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F65F55C157700B500C05C80 /* PopoverBackgroundView.m */; };
+		1F65F5611577066B00C05C80 /* Border.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F65F5601577066B00C05C80 /* Border.png */; };
+		1F65F563157708B900C05C80 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F65F562157708B900C05C80 /* Arrow.png */; };
 		1F93DE7F156B3CAD00BE688B /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7C156B3CAD00BE688B /* BNRItem.m */; };
 		1F93DE80156B3CAD00BE688B /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE7E156B3CAD00BE688B /* BNRItemStore.m */; };
 		1F93DE85156B3CCD00BE688B /* HomepwnerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */; };
@@ -27,6 +30,10 @@
 		1F65F53F156DDB7700C05C80 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		1F65F5531576C39E00C05C80 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		1F65F5541576C39E00C05C80 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
+		1F65F55B157700B500C05C80 /* PopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverBackgroundView.h; sourceTree = "<group>"; };
+		1F65F55C157700B500C05C80 /* PopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverBackgroundView.m; sourceTree = "<group>"; };
+		1F65F5601577066B00C05C80 /* Border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Border.png; sourceTree = "<group>"; };
+		1F65F562157708B900C05C80 /* Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow.png; sourceTree = "<group>"; };
 		1F93DE7B156B3CAD00BE688B /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		1F93DE7C156B3CAD00BE688B /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -89,10 +96,14 @@
 		1FC8EF69155E05FA00D9DB60 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				1F65F562157708B900C05C80 /* Arrow.png */,
+				1F65F5601577066B00C05C80 /* Border.png */,
 				1F65F5531576C39E00C05C80 /* BNRImageStore.h */,
 				1F65F5541576C39E00C05C80 /* BNRImageStore.m */,
 				1F65F53D156DDB7700C05C80 /* DetailViewController.h */,
 				1F65F53E156DDB7700C05C80 /* DetailViewController.m */,
+				1F65F55B157700B500C05C80 /* PopoverBackgroundView.h */,
+				1F65F55C157700B500C05C80 /* PopoverBackgroundView.m */,
 				1F65F53F156DDB7700C05C80 /* DetailViewController.xib */,
 				1F93DE81156B3CCD00BE688B /* HomepwnerAppDelegate.h */,
 				1F93DE82156B3CCD00BE688B /* HomepwnerAppDelegate.m */,
@@ -171,6 +182,8 @@
 			files = (
 				1FC8EF6E155E05FA00D9DB60 /* InfoPlist.strings in Resources */,
 				1F65F541156DDB7700C05C80 /* DetailViewController.xib in Resources */,
+				1F65F5611577066B00C05C80 /* Border.png in Resources */,
+				1F65F563157708B900C05C80 /* Arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +201,7 @@
 				1F93DE86156B3CCD00BE688B /* ItemsViewController.m in Sources */,
 				1F65F540156DDB7700C05C80 /* DetailViewController.m in Sources */,
 				1F65F5551576C39E00C05C80 /* BNRImageStore.m in Sources */,
+				1F65F55D157700B500C05C80 /* PopoverBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

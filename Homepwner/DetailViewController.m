@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
+#import "PopoverBackgroundView.h"
 
 @interface DetailViewController ()
 
@@ -154,12 +155,14 @@
                               initWithContentViewController:imagePicker];
         
         [imagePickerPopover setDelegate:self];
+        [imagePickerPopover setPopoverBackgroundViewClass:[PopoverBackgroundView class]];
         
         // Display the popover controller; sender
         // is the camera bar button item
         [imagePickerPopover presentPopoverFromBarButtonItem:sender 
                             permittedArrowDirections:UIPopoverArrowDirectionAny 
                             animated:YES];
+        
      } else {
          [self presentViewController:imagePicker animated:YES completion:nil];
      }
