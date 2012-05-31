@@ -89,8 +89,8 @@
     UINavigationController *navController = [[UINavigationController alloc]
                                 initWithRootViewController:detailViewController];
     
-    [navController setModalPresentationStyle:UIModalPresentationPageSheet];
-    [navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [navController setModalPresentationStyle:UIModalPresentationFullScreen];
+    [navController setModalTransitionStyle:UIModalTransitionStylePartialCurl];
     
     [self presentViewController:navController animated:YES completion:nil];
 }
