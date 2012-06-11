@@ -49,7 +49,7 @@
     NSString *imagePath = [self imagePathForKey:s];
     
     // Turn image into JPEG data
-    NSData *d = UIImageJPEGRepresentation(i, .5);
+    NSData *d = UIImagePNGRepresentation(i);
     
     // Write it to full path
     [d writeToFile:imagePath atomically:YES];
