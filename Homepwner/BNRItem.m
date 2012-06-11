@@ -51,6 +51,21 @@
     return newItem;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        [self setItemName:[aDecoder decodeObjectForKey:@"itemName"]];
+        [self setSerialNumber:[aDecoder decodeObjectForKey:@"serialNumber"]];
+        [self setImageKey:[aDecoder decodeObjectForKey:@"imageKey"]];
+        
+        [self setValueInDollars:[aDecoder decodeIntForKey:@"valueInDollars"]];
+        
+        dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
+    }
+    return self;
+}
+
 - (id)initWithItemName:(NSString *)name
         valueInDollars:(int)value
           serialNumber:(NSString *)sNumber
@@ -95,6 +110,17 @@
      dateCreated];
     return descriptionString;
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:itemName forKey:@"itemName"];
+    [aCoder encodeObject:serialNumber forKey:@"serialNumber"];
+    [aCoder encodeObject:dateCreated forKey:@"dateCreated"];
+    [aCoder encodeObject:imageKey forKey:@"imageKey"];
+    
+    [aCoder encodeInt:valueInDollars forKey:@"valueInDollars"];
+}
+
 - (void)dealloc
 {
     NSLog(@"Destroyed: %@ ", self);

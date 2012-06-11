@@ -199,13 +199,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     CFRelease(newUniqueID);
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        // If on the phone, the image picker is presented modall.  Dismiss it.
+        // If on the phone, the image picker is presented modally.  Dismiss it.
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         // If on the pad, the image picker is in the popover.  Dismiss the popover.
         [imagePickerPopover dismissPopoverAnimated:YES];
         imagePickerPopover = nil;
     }
+    
+    [self viewWillAppear:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
