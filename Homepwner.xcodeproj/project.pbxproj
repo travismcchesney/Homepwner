@@ -21,6 +21,8 @@
 		1FC8EF68155E05FA00D9DB60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC8EF67155E05FA00D9DB60 /* CoreGraphics.framework */; };
 		1FC8EF6E155E05FA00D9DB60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FC8EF6C155E05FA00D9DB60 /* InfoPlist.strings */; };
 		1FC8EF70155E05FA00D9DB60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8EF6F155E05FA00D9DB60 /* main.m */; };
+		A982D9A21597BA9200236A2E /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A982D9A01597BA9200236A2E /* ImageViewController.m */; };
+		A982D9A31597BA9200236A2E /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A982D9A11597BA9200236A2E /* ImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,9 @@
 		1FC8EF6D155E05FA00D9DB60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FC8EF6F155E05FA00D9DB60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FC8EF71155E05FA00D9DB60 /* Homepwner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Homepwner-Prefix.pch"; sourceTree = "<group>"; };
+		A982D99F1597BA9200236A2E /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		A982D9A01597BA9200236A2E /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		A982D9A11597BA9200236A2E /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +111,9 @@
 				1F057049159390F200903770 /* HomepwnerItemCell.m */,
 				1F93DE83156B3CCD00BE688B /* ItemsViewController.h */,
 				1F93DE84156B3CCD00BE688B /* ItemsViewController.m */,
+				A982D99F1597BA9200236A2E /* ImageViewController.h */,
+				A982D9A01597BA9200236A2E /* ImageViewController.m */,
+				A982D9A11597BA9200236A2E /* ImageViewController.xib */,
 				1F93DE7B156B3CAD00BE688B /* BNRItem.h */,
 				1F93DE7C156B3CAD00BE688B /* BNRItem.m */,
 				1F93DE7D156B3CAD00BE688B /* BNRItemStore.h */,
@@ -180,6 +188,7 @@
 				1FC8EF6E155E05FA00D9DB60 /* InfoPlist.strings in Resources */,
 				1F65F541156DDB7700C05C80 /* DetailViewController.xib in Resources */,
 				1F05704C1593912C00903770 /* HomepwnerItemCell.xib in Resources */,
+				A982D9A31597BA9200236A2E /* ImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +207,7 @@
 				1F65F540156DDB7700C05C80 /* DetailViewController.m in Sources */,
 				1F65F5551576C39E00C05C80 /* BNRImageStore.m in Sources */,
 				1F05704A159390F200903770 /* HomepwnerItemCell.m in Sources */,
+				A982D9A21597BA9200236A2E /* ImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -166,6 +166,41 @@
 - (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
 {
     NSLog(@"Goint to show the image for %@", ip);
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // Get the item for the index path
+        BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
+        
+        NSString *imageKey = [i imageKey];
+        
+        // If there is no image, we don't need to display anything
+        UIImage *img = [[BNRImageStore sharedStore] imageForKey:imageKey];
+        if (!img)
+            return;
+        
+        // Make a rectangle that the frame of the button relative to our table view
+        CGRect rect = [[self view] convertRect:[sender bounds] fromView:sender];
+        
+        // Create a new ImageViewController and set its image
+        ImageViewController *ivc = [[ImageViewController alloc] init];
+        [ivc setImage:img];
+        
+        // Present a 600x600 popover from the rect
+        imagePopover = [[UIPopoverController alloc] initWithContentViewController:ivc];
+        [imagePopover setDelegate:self];
+        [imagePopover setPopoverContentSize:CGSizeMake(600, 600)];
+        
+        [imagePopover presentPopoverFromRect:rect 
+                                      inView:[self view] 
+                    permittedArrowDirections:UIPopoverArrowDirectionAny 
+                                    animated:YES];
+    }
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    [imagePopover dismissPopoverAnimated:YES];
+    imagePopover = nil;
 }
 
 @end

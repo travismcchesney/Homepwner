@@ -209,7 +209,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         imagePickerPopover = nil;
     }
     
-    [self viewWillAppear:YES];
+    // Get image for image key from image store
+    UIImage *imageToDisplay = 
+    [[BNRImageStore sharedStore] imageForKey:key];
+    
+    // Use that image to put on the screen in imageView
+    [imageView setImage:imageToDisplay];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

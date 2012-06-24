@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "DetailViewController.h"
 #import "HomepwnerItemCell.h"
+#import "BNRImageStore.h"
+#import "ImageViewController.h"
 
-@interface ItemsViewController : UITableViewController
+@interface ItemsViewController : UITableViewController <UIPopoverControllerDelegate>
 {
     IBOutlet UIView *headerView;
+    UIPopoverController *imagePopover;
 }
 
 - (IBAction)addNewItem:(id)sender;

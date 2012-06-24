@@ -16,7 +16,8 @@
 @synthesize controller;
 @synthesize tableView;
 
-- (IBAction)showImage:(id)sender {
+- (IBAction)showImage:(id)sender 
+{
     // Get this name of this method, "showImage:"
     NSString *selector = NSStringFromSelector(_cmd);
     // selector is now "showImage:atImdexPath:"
