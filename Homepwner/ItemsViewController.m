@@ -66,6 +66,9 @@
     [[cell nameLabel] setText:[p itemName]];
     [[cell serialNumberLabel] setText:[p serialNumber]];
     [[cell valueLabel] setText:[NSString stringWithFormat:@"$%d", [p valueInDollars]]];
+    if ([p valueInDollars] > 50) {
+        [[cell valueLabel] setTextColor:[UIColor greenColor]];
+    }
     [[cell thumbnailView] setImage:[p thumbnail]];
      
     return cell;
