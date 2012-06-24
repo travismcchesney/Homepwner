@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseCell.h"
 
-@interface HomepwnerItemCell : UITableViewCell
+@interface HomepwnerItemCell : BaseCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
