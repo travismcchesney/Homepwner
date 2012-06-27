@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseCell : UITableViewCell
-{
-    
-}
 
--(void)sendMessage:(NSString *)message toObject:(id)toObject withSender:(id)sender withParameter:(id)parameter;
+@property (weak, nonatomic) id controller;
+@property (weak, nonatomic) UITableView *tableView;
+
+-(void)sendMessage:(SEL)selector withSender:(id)sender;
 
 @end

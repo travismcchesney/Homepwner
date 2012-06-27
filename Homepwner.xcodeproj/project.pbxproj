@@ -22,6 +22,8 @@
 		1FC8EF6E155E05FA00D9DB60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FC8EF6C155E05FA00D9DB60 /* InfoPlist.strings */; };
 		1FC8EF70155E05FA00D9DB60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8EF6F155E05FA00D9DB60 /* main.m */; };
 		A93A2C631597C7FC001F09C3 /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93A2C621597C7FC001F09C3 /* BaseCell.m */; };
+		A93A2C671597CE84001F09C3 /* HomepwnerStepperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93A2C661597CE84001F09C3 /* HomepwnerStepperCell.m */; };
+		A93A2C691597CEB2001F09C3 /* HomepwnerStepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93A2C681597CEB2001F09C3 /* HomepwnerStepperCell.xib */; };
 		A982D9A21597BA9200236A2E /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A982D9A01597BA9200236A2E /* ImageViewController.m */; };
 		A982D9A31597BA9200236A2E /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A982D9A11597BA9200236A2E /* ImageViewController.xib */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,9 @@
 		1FC8EF71155E05FA00D9DB60 /* Homepwner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Homepwner-Prefix.pch"; sourceTree = "<group>"; };
 		A93A2C611597C7FC001F09C3 /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
 		A93A2C621597C7FC001F09C3 /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
+		A93A2C651597CE84001F09C3 /* HomepwnerStepperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepwnerStepperCell.h; sourceTree = "<group>"; };
+		A93A2C661597CE84001F09C3 /* HomepwnerStepperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepwnerStepperCell.m; sourceTree = "<group>"; };
+		A93A2C681597CEB2001F09C3 /* HomepwnerStepperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomepwnerStepperCell.xib; sourceTree = "<group>"; };
 		A982D99F1597BA9200236A2E /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		A982D9A01597BA9200236A2E /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		A982D9A11597BA9200236A2E /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
@@ -116,6 +121,9 @@
 				1F93DE84156B3CCD00BE688B /* ItemsViewController.m */,
 				A93A2C611597C7FC001F09C3 /* BaseCell.h */,
 				A93A2C621597C7FC001F09C3 /* BaseCell.m */,
+				A93A2C651597CE84001F09C3 /* HomepwnerStepperCell.h */,
+				A93A2C661597CE84001F09C3 /* HomepwnerStepperCell.m */,
+				A93A2C681597CEB2001F09C3 /* HomepwnerStepperCell.xib */,
 				A982D99F1597BA9200236A2E /* ImageViewController.h */,
 				A982D9A01597BA9200236A2E /* ImageViewController.m */,
 				A982D9A11597BA9200236A2E /* ImageViewController.xib */,
@@ -194,6 +202,7 @@
 				1F65F541156DDB7700C05C80 /* DetailViewController.xib in Resources */,
 				1F05704C1593912C00903770 /* HomepwnerItemCell.xib in Resources */,
 				A982D9A31597BA9200236A2E /* ImageViewController.xib in Resources */,
+				A93A2C691597CEB2001F09C3 /* HomepwnerStepperCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +223,7 @@
 				1F05704A159390F200903770 /* HomepwnerItemCell.m in Sources */,
 				A982D9A21597BA9200236A2E /* ImageViewController.m in Sources */,
 				A93A2C631597C7FC001F09C3 /* BaseCell.m in Sources */,
+				A93A2C671597CE84001F09C3 /* HomepwnerStepperCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

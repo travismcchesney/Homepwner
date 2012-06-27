@@ -7,6 +7,7 @@
 //
 
 #import "ItemsViewController.h"
+#import "StepperViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
@@ -50,14 +51,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Set the text on the cell with the descriptino of the item
+    // Set the text on the cell with the description of the item
     // that is at the nth index of items, where n = row this cell
     // will appear in on the tableview
     BNRItem *p = [[[BNRItemStore sharedStore] allItems]
                   objectAtIndex:[indexPath row]];
     
     // Get the new or recycled cell
-    HomepwnerItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomepwnerItemCell"];
+    //HomepwnerItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomepwnerItemCell"];
+    HomepwnerStepperCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomepwnerStepperCell"];
     
     [cell setController:self];
     [cell setTableView:tableView];
@@ -67,6 +69,9 @@
     [[cell serialNumberLabel] setText:[p serialNumber]];
     [[cell valueLabel] setText:[NSString stringWithFormat:@"$%d", [p valueInDollars]]];
     [[cell thumbnailView] setImage:[p thumbnail]];
+    [[cell stepper] setMaximumValue:DBL_MAX];
+    [[cell stepper] setMinimumValue:0];
+    [[cell stepper] setValue:[p valueInDollars]];
      
     return cell;
 }
@@ -141,11 +146,14 @@
     [super viewDidLoad];
     
     // Load the NIB file
-    UINib *nib = [UINib nibWithNibName:@"HomepwnerItemCell" bundle:nil];
+    //UINib *nib = [UINib nibWithNibName:@"HomepwnerItemCell" bundle:nil];
+    UINib *nib = [UINib nibWithNibName:@"HomepwnerStepperCell" bundle:nil];
     
     // Register this NIB which contains the cell
+    //[[self tableView] registerNib:nib
+    //       forCellReuseIdentifier:@"HomepwnerItemCell"];
     [[self tableView] registerNib:nib
-           forCellReuseIdentifier:@"HomepwnerItemCell"];
+           forCellReuseIdentifier:@"HomepwnerStepperCell"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -165,7 +173,7 @@
 
 - (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
 {
-    NSLog(@"Goint to show the image for %@", ip);
+    NSLog(@"Going to show the image for %@", ip);
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         // Get the item for the index path
@@ -194,6 +202,23 @@
                                       inView:[self view] 
                     permittedArrowDirections:UIPopoverArrowDirectionAny 
                                     animated:YES];
+    }
+}
+
+- (void)changeValue:(id)sender atIndexPath:(NSIndexPath *)ip
+{
+    NSLog(@"Value changed%@", ip);
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // Get the item for the index path
+        BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
+        
+        [i setValueInDollars:[(UIStepper *)sender value]];
+        
+        HomepwnerStepperCell *cell = (HomepwnerStepperCell *)[[self tableView] cellForRowAtIndexPath:ip];
+        
+        [[cell valueLabel] setText:[NSString stringWithFormat:@"$%d", [i valueInDollars]]];
+        
     }
 }
 

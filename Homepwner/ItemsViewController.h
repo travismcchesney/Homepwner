@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DetailViewController.h"
 #import "HomepwnerItemCell.h"
+#import "HomepwnerStepperCell.h"
 #import "BNRImageStore.h"
 #import "ImageViewController.h"
 
@@ -16,6 +17,7 @@
 {
     IBOutlet UIView *headerView;
     UIPopoverController *imagePopover;
+    UIPopoverController *stepperPopover;
 }
 
 - (IBAction)addNewItem:(id)sender;

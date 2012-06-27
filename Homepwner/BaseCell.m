@@ -10,6 +10,13 @@
 
 @implementation BaseCell
 
+@synthesize controller;
+@synthesize tableView;
+
+- (void)setController:(id)c
+{
+    controller = c;
+}
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -26,17 +33,24 @@
     // Configure the view for the selected state
 }
 
-- (void)sendMessage:(NSString *)message toObject:(id)toObject withSender:(id)sender withParameter:(id)parameter
+- (void)sendMessage:(SEL)selector withSender:(id)sender
 {
+    NSString *message = NSStringFromSelector(selector);
+    
+    // selector is now appended with ":atImdexPath:"
+    message = [message stringByAppendingString:@"atIndexPath:"];
+    
     // Prepare a selector from this string
     SEL newSelector = NSSelectorFromString(message);
+
+    NSIndexPath *indexPath = [[self tableView] indexPathForCell:self];
     
-    if (parameter) {
-        if ([toObject respondsToSelector:newSelector]) {
+    if (indexPath) {
+        if ([[self controller] respondsToSelector:newSelector]) {
             // Ignore warning for this line - may or may not appear, doesn't matter
-            [toObject performSelector:newSelector
+            [[self controller] performSelector:newSelector
                                     withObject:sender
-                                    withObject:parameter];
+                                    withObject:indexPath];
         }
     }
 }
