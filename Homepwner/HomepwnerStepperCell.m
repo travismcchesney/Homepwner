@@ -16,11 +16,13 @@
 @synthesize valueLabel;
 @synthesize stepper;
 
-- (IBAction)showImage:(id)sender {
+- (IBAction)showImage:(UIButton *)sender 
+{
     [self sendMessage:_cmd withSender:sender];
 }
 
-- (IBAction)changeValue:(id)sender {
+- (IBAction)changeValue:(UIStepper *)sender 
+{
     [self sendMessage:_cmd withSender:sender];
 }
 @end

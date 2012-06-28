@@ -7,7 +7,6 @@
 //
 
 #import "ItemsViewController.h"
-#import "StepperViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
@@ -171,7 +170,7 @@
     }
 }
 
-- (void)showImage:(id)sender atIndexPath:(NSIndexPath *)ip
+- (void)showImage:(UIButton *)sender atIndexPath:(NSIndexPath *)ip
 {
     NSLog(@"Going to show the image for %@", ip);
     
@@ -205,7 +204,7 @@
     }
 }
 
-- (void)changeValue:(id)sender atIndexPath:(NSIndexPath *)ip
+- (void)changeValue:(UIStepper *)sender atIndexPath:(NSIndexPath *)ip
 {
     NSLog(@"Value changed%@", ip);
     
@@ -213,7 +212,7 @@
         // Get the item for the index path
         BNRItem *i = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[ip row]];
         
-        [i setValueInDollars:[(UIStepper *)sender value]];
+        [i setValueInDollars:[sender value]];
         
         HomepwnerStepperCell *cell = (HomepwnerStepperCell *)[[self tableView] cellForRowAtIndexPath:ip];
         
