@@ -35,11 +35,18 @@
 {
     [super viewWillAppear:animated];
     
-    CGSize sz = [[self image] size];
-    [scrollView setContentSize:sz];
-    [imageView setFrame:CGRectMake(0, 0, sz.width, sz.height)];
+    CGSize imageSize = [[self image] size];
+    
+    [scrollView setContentSize:imageSize];
+    [scrollView setMinimumZoomScale:1.0];
+    [scrollView setMaximumZoomScale:5.0];
+    [scrollView setDelegate:self];
+    
+    [imageView setFrame:CGRectMake(0, 0, imageSize.width, imageSize.height)];
      
     [imageView setImage:[self image]];
+    
+    [imageView setCenter:CGPointMake([scrollView frame].size.width / 2, [scrollView frame].size.height / 2)];
 }
 
 - (void)viewDidUnload
@@ -54,6 +61,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return imageView;
 }
 
 @end
